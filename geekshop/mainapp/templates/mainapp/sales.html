@@ -4,11 +4,11 @@
 {% block main %}
     <div class="main container">
         <div class="main-menu container">
-                <div class="row">
-                    {% include 'mainapp/includes/inc_сategories_menu.html' %}
-                </div>
+            <div class="main-top-h-div">
+                <h2 class="main-top-h">Скидки и Акции ({% now "F Y" %})</h2>
                 <br>
             </div>
+        </div>
         <div class="item-container container">
             <div class="row">
                 {% for i in products_count %}

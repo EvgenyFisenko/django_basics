@@ -1,260 +1,147 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% extends 'mainapp/base.html' %}
+{% load static %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href=/static/css/bootstrap.min.css >
-    <link rel="stylesheet" href=/static/css/main.css>
-
-    <title>Подробно</title>
-</head>
-<body>
-    <div class="container">
-        <div class="header container">
+{% block main %}
+    <div class="main container">
+        <div class="main-menu container">
             <div class="row">
-                <div class="logo-div col-lg-3 col-md-4">
-                    <a href="/"><img src="/static/img/logo.png" class="logo-img" alt="logo"></a>
-                </div>
-                <div class="header-menu col-lg-9">
-                    <div class="row">
-                        <div class="top-header-menu-left col-lg-9">
-                            <nav class=" navbar justify-content-start navbar-expand-md navbar-light">
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
-                                    aria-controls="navContent" aria-expanded="false" aria-label="navCollapse">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                                <div class="collapse navbar-collapse" id="main-nav">
-                                    <ul class=" header-nav navbar-nav">
-                                        <li class="nav-item">
-                                            <a class="header-menu-a" href="/">Главная</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="header-menu-a header-menu-a-active" href="/catalog/">Каталог</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="header-menu-a" href="#">Скидки</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="header-menu-a" href="/contacts">Контакты</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-                        <div class="top-header-menu-right col-lg-3">
-                            <button type="button" class="lk-btn btn btn-sm btn-outline-dark"><span class="lk-span"><img src="/static/img/user-ico.svg" class="d-inline-block align-top" alt="login">
-                                Личный кабинет</span></button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="bottom-header-menu-left col-lg-9">
-                                <nav class="header-nav navbar navbar-light">
-                                    <form class="form-inline col-md-11">
-                                        <input class="search-input form-control mr-sm-2 col-lg-9" type="search" placeholder="Я хочу купить" aria-label="Search">
-                                        <button class="search-btn btn my-2 my-sm-0" type="submit">Найти</button>
-                                    </form>
-                                </nav>
-                            </div>
-                        <div class="bottom-header-menu-right col-lg-3">
-                            <button class="cart-btn btn my-2 my-sm-0" type="submit"> <img src="/static/img/cart-ico.svg" class="d-inline-block align-top" alt="cart-ico">
-                                Корзина <span class="badge badge-success">4</span></button>
-                        </div>
-                    </div>
-                </div>
+                {% include 'mainapp/includes/inc_сategories_menu.html' %}
             </div>
+            <br>
         </div>
-        <div class="main container">
-            <div class="main-menu container">
-                <div class="row product-menu-row">
-                    <div class="product-menu-div col-12">
-                        <ul class="product-menu-nav nav justify-content-center">
-                            <li class="nav-item">
-                                <a class="header-menu-a header-menu-a-active" href="#">Телефоны</a>
+        <hr>
+        <div class="product container">
+            <div class="row">
+                <div class="product-detail-img-div col-md-5">
+                    <a href="{% static '/img/phone.jpg' %}" target="_blank">
+                        <img class="detail-img" src="{% static '/img/phone.jpg' %}" alt="product">
+                    </a>
+                    <div class="detail-img-slider-div">
+                        <a class="detail-slider-a" href="#"><img class="detail-img-sm" src="/static/img/phone-sm.jpg" alt="product-sm"></a>
+                        <a class="detail-slider-a" href="#"><img class="detail-img-sm" src="/static/img/phone-sm.jpg" alt="product-sm"></a>
+                        <a class="detail-slider-a" href="#"><img class="detail-img-sm" src="/static/img/phone-sm.jpg" alt="product-sm"></a>
+                        <a class="detail-slider-a" href="#"><img class="detail-img-sm" src="/static/img/phone-sm.jpg" alt="product-sm"></a>
+                    </div>
+                </div>
+                <div class="product-detail-chars-div col-md-7">
+                    <div class="main-top-h-div">
+                        <h3 class="detail-chars-h">Производитель</h3>
+                        <h5 class="detail-chars-h">Модель</h5>
+                    </div>
+                    <br>
+                    <div>
+                        <ul class="chars">
+                            <li>Процессор:</li>
+                            <li>Графический процессор:</li>
+                            <li>Оперативная память:</li>
+                            <li>Размер и тип дисплея:</li>
+                            <li>Камера:</li>
+                            <li>Фронтальная камера:</li>
+                            <li>Поддержка карт памяти:</li>
+                            <li>Поддержка 2-х SIM-карт:</li>
+                            <li>Тип 4G модема:</li>
+                            <li>Стандарт WiFi:</li>
+                            <li>Стандарт Blue tooth:</li>
+                            <li>Накопитель:<br>
+                                <label>
+                                    <input type="radio" name="mem" value="128">&nbsp; 128 GB &nbsp;
+                                    <input type="radio" name="mem" value="256">&nbsp; 256 GB &nbsp;
+                                    <input type="radio" name="mem" value="512">&nbsp; 512 GB &nbsp;
+                                </label>
                             </li>
-                            <li class="nav-item">
-                                <a class="header-menu-a" href="#">Смартфоны</a>
+                            <li>Цвет:<br>
+                                <label>
+                                    <input type="radio" name="colour" value="black"><span class="detail-color-span detail-color-span-black"></span>
+                                    <input type="radio" name="colour" value="gray"><span class="detail-color-span detail-color-span-gray"></span>
+                                    <input type="radio" name="colour" value="red"><span class="detail-color-span detail-color-span-red"></span>
+                                </label>
                             </li>
-                            <li class="nav-item">
-                                <a class="header-menu-a" href="#">Планшеты</a>
+                            <li class="li-btn">
+                                <br>
+                                <h3 class="detail-chars-h">0.00 руб</h3>
                             </li>
-                            <li class="nav-item">
-                                <a class="header-menu-a" href="#">Аксессуары</a>
+                            <li class="li-btn">
+                                <br>
+                                <button class="add-to-cart-btn cart-btn btn my-2 my-sm-0" type="submit">
+                                <img src="/static/img/cart-plus-ico.svg" class="d-inline-block align-top" alt="to-cart">
+                                    В корзину
+                                </button>
+                                <br>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <br>
             </div>
-            <hr>
-            <div class="product container">
-                <div class="row">
-                    <div class="product-detail-img-div col-md-5">
-                        <a href="/static/img/phone.jpg" target="_blank">
-                            <img class="detail-img" src="/static/img/phone.jpg" alt="product">
-                        </a>
-                        <div class="detail-img-slider-div">
-                            <a class="detail-slider-a" href="#"><img class="detail-img-sm" src="/static/img/phone-sm.jpg" alt="product-sm"></a>
-                            <a class="detail-slider-a" href="#"><img class="detail-img-sm" src="/static/img/phone-sm.jpg" alt="product-sm"></a>
-                            <a class="detail-slider-a" href="#"><img class="detail-img-sm" src="/static/img/phone-sm.jpg" alt="product-sm"></a>
-                            <a class="detail-slider-a" href="#"><img class="detail-img-sm" src="/static/img/phone-sm.jpg" alt="product-sm"></a>
-                        </div>
-                    </div>
-                    <div class="product-detail-chars-div col-md-7">
-                        <div class="main-top-h-div">
-                            <h3 class="detail-chars-h">Производитель</h3>
-                            <h5 class="detail-chars-h">Модель</h5>
-                        </div>
-                        <br>
-                        <div>
-                            <ul class="chars">
-                                <li>Процессор:</li>
-                                <li>Графический процессор:</li>
-                                <li>Оперативная память:</li>
-                                <li>Размер и тип дисплея:</li>
-                                <li>Камера:</li>
-                                <li>Фронтальная камера:</li>
-                                <li>Поддержка карт памяти:</li>
-                                <li>Поддержка 2-х SIM-карт:</li>
-                                <li>Тип 4G модема:</li>
-                                <li>Стандарт WiFi:</li>
-                                <li>Стандарт Blue tooth:</li>
-                                <li>Накопитель:<br>
-                                    <label>
-                                        <input type="radio" name="mem" value="128">&nbsp; 128 GB &nbsp;
-                                        <input type="radio" name="mem" value="256">&nbsp; 256 GB &nbsp;
-                                        <input type="radio" name="mem" value="512">&nbsp; 512 GB &nbsp;
-                                    </label>
-                                </li>
-                                <li>Цвет:<br>
-                                    <label>
-                                        <input type="radio" name="colour" value="black"><span class="detail-color-span detail-color-span-black"></span>
-                                        <input type="radio" name="colour" value="gray"><span class="detail-color-span detail-color-span-gray"></span>
-                                        <input type="radio" name="colour" value="red"><span class="detail-color-span detail-color-span-red"></span>
-                                    </label>
-                                </li>
-                                <li style="list-style-type: none">
-                                    <br>
-                                    <button class="add-to-cart-btn cart-btn btn my-2 my-sm-0" type="submit">
-                                    <img src="/static/img/cart-plus-ico.svg" class="d-inline-block align-top" alt="to-cart">
-                                        В корзину
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="accordion" id="detail-accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed detail-acc-btn " type="button" data-toggle="collapse"
+                                            data-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                        Краткое описание
                                     </button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="accordion" id="detail-accordion">
-                            <div class="card">
-                                <div class="card-header" id="headingTwo">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed detail-acc-btn " type="button" data-toggle="collapse"
-                                                data-target="#collapseTwo" aria-expanded="false"
-                                                aria-controls="collapseTwo">
-                                            Краткое описание
-                                        </button>
-                                    </h5>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                 data-parent="#detail-accordion">
+                                <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                                    sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                    shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                    cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                                    Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+                                    you probably haven't heard of them accusamus labore sustainable VHS.
                                 </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                     data-parent="#detail-accordion">
-                                    <div class="card-body">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="detail-acc-btn btn btn-link collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                        Подробное описание
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                 data-parent="#detail-accordion">
+                                <div class="card-body">
                                         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-                                        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                                        shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
-                                        you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header" id="headingThree">
-                                    <h5 class="mb-0">
-                                        <button class="detail-acc-btn btn btn-link collapsed" type="button" data-toggle="collapse"
-                                                data-target="#collapseThree" aria-expanded="false"
-                                                aria-controls="collapseThree">
-                                            Подробное описание
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                     data-parent="#detail-accordion">
-                                    <div class="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-                                        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                                        shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
-                                        you probably haven't heard of them accusamus labore sustainable VHS.
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-                                        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                                        shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
-                                        you probably haven't heard of them accusamus labore sustainable VHS.
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                                        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-                                        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                                        shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-                                        cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                                        Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
-                                        you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </div>
+                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                                    sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                    shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                    cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                                    Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+                                    you probably haven't heard of them accusamus labore sustainable VHS.
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                                    sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                    shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                    cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                                    Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+                                    you probably haven't heard of them accusamus labore sustainable VHS.
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                                    sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                                    shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                                    cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+                                    Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+                                    you probably haven't heard of them accusamus labore sustainable VHS.
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer container">
-            <div class="row">
-                <div class="footer-menu col-md-4">
-                    <ul class="footer-menu">
-                        <li><a class="header-menu-a" href="/">ГЛАВНАЯ</a></li>
-                        <li><a class="header-menu-a header-menu-a-active" href="/catalog/">КАТАЛОГ</a></li>
-                        <li><a class="header-menu-a" href="#">СКИДКИ</a></li>
-                        <li><a class="header-menu-a" href="/contacts/">КОНТАКТЫ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-media col-md-4">
-                    <img src="/static/img/app-store.jpg" class="footer-media-img" alt="app-store"><br>
-                    <img src="/static/img/google-play.jpg" class="footer-media-img" alt="google-play">
-                </div>
-                <div class="footer-contacts col-md-4">
-                    <ul>
-                        <li><h5>Наши контакты:</h5></li>
-                        <li>Город, Улица 00, строение 0Б</li>
-                        <li>+7 495 0000000</li>
-                        <li>+7 977 0000000</li>
-                        <li>email@email.ru</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="copyright-div col-sm-12">
-                    <p class="colored-p"> Дизайн и разработка:
-                        <a href="mailto:e.fisenko@outlook.com">Евгений Фисенко</a>
-                        &copy; 2020
-                    </p>
                 </div>
             </div>
         </div>
     </div>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="/static/js/jquery.slim.min.js"></script>
-	<script src="/static/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% endblock %}

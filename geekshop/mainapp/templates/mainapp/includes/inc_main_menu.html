@@ -1,0 +1,10 @@
+<ul class="header-nav navbar-nav">
+    {% for link in main_menu_links %}
+        <li class="nav-item">
+            <a href="{% url link.href %}" class="menu-a
+            {% if request.resolver_match.url_name == link.href %}
+                menu-active
+            {% endif %} ">{{ link.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
