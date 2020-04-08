@@ -20,8 +20,13 @@ from mainapp import views
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    path('', views.main),
-    path('catalog/', views.catalog),
-    path('product/', views.product),
-    path('contacts/', views.contacts),
+    path('', views.main, name='main'),
+    path('catalog/', views.catalog, name='catalog'),
+    path('catalog/phones/', views.catalog_phones, name='catalog_phones'),
+    path('catalog/smartphones/', views.catalog_smartphones, name='catalog_smartphones'),
+    path('catalog/tablets/', views.catalog_tablets, name='catalog_tablets'),
+    path('catalog/accessories/', views.catalog_accessories, name='catalog_accessories'),
+    path('sales/', views.sales, name='sales'),
+    path('product/', views.product, name='product'),
+    path('contacts/', views.contacts, name='contacts'),
 ]
