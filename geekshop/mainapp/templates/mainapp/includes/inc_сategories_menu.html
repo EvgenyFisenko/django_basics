@@ -2,10 +2,10 @@
     <ul class="product-menu-nav nav justify-content-center">
         {% for link in categories_menu_links %}
             <li class="nav-item">
-                <a href="{% url link.href %}" class="menu-a
-                {% if  request.resolver_match.url_name == link.href %}
+                <a href="{% url 'products:category' link.id %}" class="menu-a
+                {% if  request.resolver_match.url_name == link.name %}
                     menu-active
-                {% endif %} ">{{ link.name }}</a>
+                {% endif %} ">{{ link.alter_name }}</a>
             </li>
         {% endfor %}
     </ul>
