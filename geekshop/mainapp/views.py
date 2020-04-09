@@ -33,7 +33,8 @@ def products(request, pk=None):
     if pk:
         product_list = Product.objects.filter(category__id=pk)
         content['products'] = product_list
-
+        category = ProductCategory.objects.get(pk=pk)
+        content['title'] = category.alter_name
     return render(request, 'mainapp/products.html', context=content)
 
 
