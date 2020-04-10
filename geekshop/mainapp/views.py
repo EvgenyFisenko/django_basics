@@ -13,7 +13,7 @@ CATEGORIES_MENU_LINKS = ProductCategory.objects.all()
 
 
 def main(request):
-    product_list = Product.objects.all()[:8]
+    product_list = Product.objects.filter(is_enable=True)[:8]
     content = {
         'title': 'Главная',
         'main_menu_links': MAIN_MENU_LINKS,
@@ -23,7 +23,7 @@ def main(request):
 
 
 def products(request, category_id=None):
-    product_list = Product.objects.all()
+    product_list = Product.objects.filter(is_enable=True)
     content = {
         'title': 'Каталог',
         'main_menu_links': MAIN_MENU_LINKS,
@@ -31,7 +31,7 @@ def products(request, category_id=None):
         'products': product_list,
     }
     if category_id:
-        product_list = Product.objects.filter(category__id=category_id)
+        product_list = Product.objects.filter(category__id=category_id).filter(is_enable=True)
         content['products'] = product_list
         category = ProductCategory.objects.get(pk=category_id)
         content['title'] = category.alter_name
