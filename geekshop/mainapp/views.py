@@ -39,7 +39,7 @@ def products(request, category_id=None):
 
 
 def sales(request):
-    product_list = Product.objects.all().order_by('-quantity')[:5]
+    product_list = Product.objects.filter(is_enable=True).order_by('-quantity')[:5]
     content = {
         'title': 'Скидки',
         'main_menu_links': MAIN_MENU_LINKS,

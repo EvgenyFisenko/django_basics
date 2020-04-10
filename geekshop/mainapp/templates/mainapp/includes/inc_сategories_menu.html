@@ -3,9 +3,9 @@
         {% for link in categories_menu_links %}
             <li class="nav-item">
                 <a href="{% url 'products:category' link.id %}" class="menu-a
-                {% if request.resolver_match.kwargs.pk == link.id %}
+                {% if request.resolver_match.kwargs.category_id == link.id %}
                     menu-active
-                {% endif %} ">{{ link.alter_name }}</a>
+                {% endif %} ">{{ link.alter_name }} </a>
             </li>
         {% endfor %}
     </ul>
