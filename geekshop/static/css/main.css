@@ -158,10 +158,10 @@
 }
 .product-detail-img-div{
     text-align: center;
+    padding: 30px;
 }
 .detail-img{
-    width: 50%;
-    margin: 30px;
+    max-height: 600px;
 }
 .detail-img-sm{
     margin: 4px;

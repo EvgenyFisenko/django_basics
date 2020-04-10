@@ -22,7 +22,7 @@ def main(request):
     return render(request, 'mainapp/index.html', context=content)
 
 
-def products(request, pk=None):
+def products(request, category_id=None):
     product_list = Product.objects.all()
     content = {
         'title': 'Каталог',
@@ -30,10 +30,10 @@ def products(request, pk=None):
         'categories_menu_links': CATEGORIES_MENU_LINKS,
         'products': product_list,
     }
-    if pk:
-        product_list = Product.objects.filter(category__id=pk)
+    if category_id:
+        product_list = Product.objects.filter(category__id=category_id)
         content['products'] = product_list
-        category = ProductCategory.objects.get(pk=pk)
+        category = ProductCategory.objects.get(pk=category_id)
         content['title'] = category.alter_name
     return render(request, 'mainapp/products.html', context=content)
 
@@ -48,13 +48,17 @@ def sales(request):
     return render(request, 'mainapp/sales.html', context=content)
 
 
-def product(request):
+def product_detail(request, category_id, product_id):
+    product = Product.objects.get(pk=product_id)
+    category = ProductCategory.objects.get(pk=category_id)
     content = {
-        'title': 'Производитель Модель',
         'main_menu_links': MAIN_MENU_LINKS,
         'categories_menu_links': CATEGORIES_MENU_LINKS,
+        'title': product.name,
+        'category': category,
+        'product': product,
     }
-    return render(request, 'mainapp/product.html', context=content)
+    return render(request, 'mainapp/product_detail.html', context=content)
 
 
 def contacts(request):

@@ -25,7 +25,6 @@ urlpatterns = [
     path('', views.main, name='main'),
     path('products/', include('mainapp.urls', namespace='products')),
     path('sales/', views.sales, name='sales'),
-    path('product/', views.product, name='product'),
     path('contacts/', views.contacts, name='contacts'),
 ]
 
