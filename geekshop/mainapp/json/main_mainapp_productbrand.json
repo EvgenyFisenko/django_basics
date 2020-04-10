@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "digma",
+    "description": "описание бренда digma",
+    "image": "brands_images/digma-logo.jpg"
+  },
+  {
+    "id": 2,
+    "name": "apple",
+    "description": "описание apple",
+    "image": "brands_images/apple-logo.png"
+  },
+  {
+    "id": 3,
+    "name": "lenovo",
+    "description": "about lenovo",
+    "image": "brands_images/lenovo-logo.png"
+  },
+  {
+    "id": 4,
+    "name": "xiaomi",
+    "description": "about xiaomi",
+    "image": "brands_images/Xiaomi_logo.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Beats",
+    "description": "about beats",
+    "image": "brands_images/beats-logo.png"
+  },
+  {
+    "id": 6,
+    "name": "huawei",
+    "description": "about huawei",
+    "image": "brands_images/huawei.jpg"
+  },
+  {
+    "id": 7,
+    "name": "nokia",
+    "description": "about nokia",
+    "image": "brands_images/nokia-logo.png"
+  }
+]

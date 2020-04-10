@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "phones",
+    "alter_name": "телефоны",
+    "description": "описание категории телефоны"
+  },
+  {
+    "id": 2,
+    "name": "smartphones",
+    "alter_name": "смартфоны",
+    "description": "описание категории смартфоны"
+  },
+  {
+    "id": 3,
+    "name": "tablets",
+    "alter_name": "планшеты",
+    "description": "описание категории планшеты"
+  },
+  {
+    "id": 4,
+    "name": "accessories",
+    "alter_name": "аксессуары",
+    "description": "описание категории аксессуары"
+  }
+]
