@@ -4,11 +4,11 @@
 {% block main %}
     <div class="main container">
         <div class="main-menu container">
-            <div class="main-top-h-div">
-                <h3 class="main-top-h">СКИДКИ</h3>
-                <br>
+            <div class="row">
+                {% include 'mainapp/includes/inc_сategories_menu.html' %}
             </div>
-        </div>
+            <br>
+            </div>
         <div class="item-container container">
             <div class="row">
                 {% include 'mainapp/includes/inc_product_card_sm.html' %}

@@ -1,0 +1,77 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block main %}
+    <div class="main container">
+        <div class="main-menu container">
+            <div class="row">
+                {% include 'mainapp/includes/inc_сategories_menu.html' %}
+            </div>
+            <br>
+        </div>
+        <hr>
+        <div class="product container">
+            <div class="row">
+                <div class="product-detail-img-div col-md-5">
+                    <a href="/media/{{ product.image }}" target="_blank">
+                        <img class="detail-img img-fluid" src="/media/{{ product.image }}" alt="product-image">
+                    </a>
+                </div>
+                <div class="product-detail-chars-div col-md-7">
+                    <div class="main-top-h-div">
+                        <h3 class="detail-chars-h">{{ product.brand|title}}</h3>
+                        <h5 class="detail-chars-h">{{ product.name}}</h5>
+                        <p>{{ product.characteristics|linebreaksbr }}</p>
+                        <h3 class="detail-chars-h">{{ product.price }} руб</h3>
+                        <br>
+                        <button class="add-to-cart-btn cart-btn btn my-2 my-sm-0" type="submit">
+                            <img src="/static/img/cart-plus-ico.svg" class="d-inline-block align-top" alt="to-cart">
+                                В корзину
+                        </button>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 description">
+                    <div class="accordion" id="detail-accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed detail-acc-btn " type="button" data-toggle="collapse"
+                                            data-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                        Краткое описание
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                 data-parent="#detail-accordion">
+                                <div class="card-body">
+                                    {{ product.short_description|linebreaksbr }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="detail-acc-btn btn btn-link collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                        Подробное описание
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                 data-parent="#detail-accordion">
+                                <div class="card-body">
+                                    {{ product.description|linebreaksbr }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

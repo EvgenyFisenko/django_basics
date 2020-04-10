@@ -1,14 +1,16 @@
 {% load static %}
-<div class="item col-sm-3" style="text-align: center">
-    <a href="{% url 'product' %}" class="top-item-a">
-        <hr>
-        <img class="top-item-img" src="{% static '/img/phone-sm.jpg'%}" alt="product-small">
-        <p class="colored-p tax-p">0.00 руб</p>
-        <p class="colored-p"> Производитель <br> Модель </p>
-    </a>
-    <button class="add-to-cart-btn cart-btn btn my-2 my-sm-0" type="submit">
-        <img src="{% static '/img/cart-plus-ico.svg'%}" class="d-inline-block align-top" alt="to-cart">
-        В корзину
-    </button>
-    <hr>
-</div>
+{% for product in products %}
+    <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="card-sm-div align-middle">
+            <a href="{% url 'products:product_detail' product.category.id product.id %}" class="item-a">
+                <p class="colored-p tax-p">{{ product.brand|title }}<br>{{ product.name|title }}</p>
+                <img class="card-img img-fluid" src="/media/{{ product.image }}" alt="product-small">
+                <p class="colored-p tax-p">{{ product.price}} руб</p>
+            </a><br>
+            <button class="cart-btn btn my-2 my-sm-0" type="submit" style="margin-top: 120px">
+                <img src="{% static '/img/cart-plus-ico.svg'%}" class="d-inline-block align-top" alt="to-cart">
+                В корзину
+            </button>
+        </div>
+    </div>
+{% endfor %}

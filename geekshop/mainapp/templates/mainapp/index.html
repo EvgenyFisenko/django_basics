@@ -58,22 +58,10 @@
         </div>
         <div class="item-container container">
             <div class="main-top-h-div">
-                <h2 class="main-top-h">Лидеры продаж ({% now "d.m.y" %})</h2><br>
+                <h3 class="main-top-h">ПОПУЛЯРНЫЕ ТОВАРЫ</h3><br>
             </div>
             <div class="row">
-                {% for item in top_products_count %}
-                    {% include 'mainapp/includes/inc_product_card_sm.html' %}
-                {% endfor %}
-            </div>
-        </div>
-        <div class="item-container container">
-            <div class="main-top-h-div">
-                <h2 class="main-top-h">Акции ({% now "F Y" %})</h2><br>
-            </div>
-            <div class="row">
-                {% for item in sale_products_count %}
-                    {% include 'mainapp/includes/inc_product_card_sm.html' %}
-                {% endfor %}
+                {% include 'mainapp/includes/inc_product_card_sm.html' %}
             </div>
         </div>
     </div>

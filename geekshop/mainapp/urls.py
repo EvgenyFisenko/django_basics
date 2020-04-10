@@ -16,17 +16,15 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 
-from mainapp import views
+import mainapp.views as mainapp
+
+app_name = 'mainapp'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.main, name='main'),
-    path('products/', include('mainapp.urls', namespace='products')),
-    path('sales/', views.sales, name='sales'),
-    path('contacts/', views.contacts, name='contacts'),
+    path('', mainapp.products, name='index'),
+    path('<int:category_id>/', mainapp.products, name='category'),
+    path('<int:category_id>/<int:product_id>/', mainapp.product_detail, name='product_detail'),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
