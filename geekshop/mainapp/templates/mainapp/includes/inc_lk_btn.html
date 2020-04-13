@@ -1,11 +1,13 @@
-{% load static %}
+{% load static%}
+
 {% if user.is_authenticated %}
-    <a href="{% url 'auth:logout' %}" class="lk-btn btn btn-sm btn-outline-dark" role="button"><span class="lk-span">
-        <img src="{% static '/img/user-ico.svg' %}" class="d-inline-block align-top" alt="login">Выйти</span>
+    <a href='{% url 'auth:edit' %}' class="lk-btn btn btn-sm btn-outline-dark" role="button"> <span class="lk-span">
+        <img src="{% static '/img/user-ico.svg' %}" class="d-inline-block align-top"
+             alt="login"> {{ user.first_name|default:'Пользователь' }}</span>
     </a>
-    <a href="{% url 'auth:edit' %}" style="font-size: 14px">{{ user.first_name|default:'Пользователь' }}</a>
 {% else %}
-    <a href="{% url 'auth:login' %}" class="lk-btn btn btn-sm btn-outline-dark" role="button"><span class="lk-span">
-        <img src="{% static '/img/user-ico.svg' %}" class="d-inline-block align-top" alt="login">Войти</span>
+    <a href='{% url 'auth:login' %}' class="lk-btn btn btn-sm btn-outline-dark" role="button"> <span class="lk-span">
+        <img src="{% static '/img/user-ico.svg' %}" class="d-inline-block align-top"
+             alt="login"> Личный кабинет </span>
     </a>
 {% endif %}

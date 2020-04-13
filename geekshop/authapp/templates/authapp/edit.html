@@ -1,14 +1,24 @@
-{% extends 'authapp/base.html' %}
-{% load staticfiles %}
+{% extends 'mainapp/base.html' %}
+{% load static %}
 
-{% block content %}
-    <form class="form-horizontal" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ edit_form.as_p }}
-        <input class="form-control" type="submit" value="сохранить">
-    </form>
-    <button class="btn btn-round form-control last">
-        <a href="{% url 'main' %}" class=""> на главную</a>
-    </button>
-    <div class="user_avatar"><img src="/media/{{ user.avatar }}"></div>
+
+{% block main %}
+    <div class="container">
+        {% include 'authapp/includes/inc_login_menu.html'%}
+        <div class="auth-div">
+            <div class="row justify-content-center">
+                <div class="col-sm-5 login-div">
+                    <h2 class="main-top-h">Редактировать профиль</h2><br>
+                    <form class="form-horizontal" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ edit_form.as_p }}
+                        <input class="form-control" type="submit" value="сохранить">
+                    </form>
+                    <div class="user_avatar">
+                        <img src="/media/{{ user.avatar }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

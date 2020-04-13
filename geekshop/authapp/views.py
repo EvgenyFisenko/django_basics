@@ -4,6 +4,14 @@ from django.urls import reverse
 from authapp.forms import ShopUserLoginForm, ShopUserRegisterForm, ShopUserEditForm
 
 
+MAIN_MENU_LINKS = [
+    {'href': 'main', 'name': 'Главная'},
+    {'href': 'products:index', 'name': 'Каталог'},
+    {'href': 'sales', 'name': 'Скидки'},
+    {'href': 'contacts', 'name': 'Контакты'},
+]
+
+
 def login(request):
     title = 'вход'
 
@@ -17,7 +25,7 @@ def login(request):
             auth.login(request, user)
             return HttpResponseRedirect(reverse('main'))
 
-    content = {'title': title, 'login_form': login_form}
+    content = {'title': title, 'login_form': login_form, 'main_menu_links': MAIN_MENU_LINKS}
     return render(request, 'authapp/login.html', content)
 
 
@@ -38,7 +46,7 @@ def register(request):
     else:
         register_form = ShopUserRegisterForm()
 
-    content = {'title': title, 'register_form': register_form}
+    content = {'title': title, 'register_form': register_form, 'main_menu_links': MAIN_MENU_LINKS}
 
     return render(request, 'authapp/register.html', content)
 
@@ -47,7 +55,7 @@ def edit(request):
     title = 'редактирование'
 
     if request.method == 'POST':
-        edit_form = ShopUserEditForm(request.POST, request.FILES,instance=request.user)
+        edit_form = ShopUserEditForm(request.POST, request.FILES, instance=request.user)
 
         if edit_form.is_valid():
             edit_form.save()
@@ -57,6 +65,6 @@ def edit(request):
     else:
         edit_form = ShopUserEditForm(instance=request.user)
 
-    content = {'title': title, 'edit_form': edit_form}
+    content = {'title': title, 'edit_form': edit_form,'main_menu_links': MAIN_MENU_LINKS}
 
     return render(request, 'authapp/edit.html', content)
