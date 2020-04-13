@@ -24,6 +24,7 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/geekshop/mainapp/templates" />
+        <option value="$MODULE_DIR$/geekshop/authapp/templates" />
       </list>
     </option>
   </component>

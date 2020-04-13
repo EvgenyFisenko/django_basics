@@ -26,6 +26,7 @@ urlpatterns = [
     path('products/', include('mainapp.urls', namespace='products')),
     path('sales/', views.sales, name='sales'),
     path('contacts/', views.contacts, name='contacts'),
+    path('auth/', include('authapp.urls', namespace='auth'))
 ]
 
 if settings.DEBUG:
