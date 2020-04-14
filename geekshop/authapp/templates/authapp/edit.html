@@ -1,0 +1,23 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+
+{% block main %}
+    <div class="container">
+        {% include 'authapp/includes/inc_login_menu.html'%}
+        <div class="auth-div">
+            <div class="row justify-content-center">
+                <div class="col-sm-5 login-div">
+                    <form class="form-horizontal" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ edit_form.as_p }}
+                        <input class="form-control" type="submit" value="сохранить">
+                    </form>
+                    <div class="user_avatar">
+                        <img src="/media/{{ user.avatar }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

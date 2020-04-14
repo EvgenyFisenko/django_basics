@@ -1,0 +1,110 @@
+[
+  {
+    "category": "phones",
+    "name": "LinxC280",
+    "image": "products_images/DigmaLinxC280-1_lfaVNrh.jpg",
+    "characteristics": "Связь: Диапазоны GSM 900, 1800 Bluetooth 3.0 \r\nРазъем для синхронизации:microUSB\r\nДисплей: TFT, Диагональ (дюйм)2.8, Разрешение (пикс) 320x240\r\nФотокамера: (Мп)0.3, Разрешение фотосъемки (пикс)640 x 480, \r\nВспышка светодиодная\r\nПамять: Поддержка карт памяти MicroSD, MicroSDHC, \r\nМакс. объем карты памяти 16 Гб\r\nМультимедиа: Аудиоплеер FM - радио\r\nАудиоразъем: 3.5 мм\r\nSIM-карта: обычная\r\nКол-во SIM-карт: 2\r\nПитание: Тип аккумулятора Литий-ионный, \r\nРазъем для зарядки Micro USB,Аккумулятор (мАч) 950\r\nКорпус: Тип корпуса классический\r\nФонарик:да\r\nВысота: 136.6(мм)\r\nШирина: 58(мм)",
+    "short_description": "LinxC280\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula cursus sollicitudin. Sed nec risus et erat commodo rhoncus. Maecenas non nisl quis purus venenatis vulputate et ut nibh. Vestibulum nec erat sapien. Praesent auctor dolor in augue malesuada, non tempor dui tristique. In gravida, augue nec",
+    "description": "LinxC280\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula cursus sollicitudin. Sed nec risus et erat commodo rhoncus. Maecenas non nisl quis purus venenatis vulputate et ut nibh. Vestibulum nec erat sapien. Praesent auctor dolor in augue malesuada, non tempor dui tristique. In gravida, augue nec molestie iaculis, dolor odio accumsan urna, in semper nibh orci vitae lacus. Vestibulum gravida at tortor in auctor. Maecenas ut erat nisl. Vestibulum venenatis, eros sit amet dignissim egestas, est nisi varius est, non porta tortor mauris et mauris. Vestibulum luctus tellus at arcu molestie, quis pretium urna efficitur. Sed ut aliquet risus. Curabitur eget sagittis sem. Etiam gravida mauris vitae turpis suscipit, dictum mollis libero semper. Nam vitae venenatis eros. Fusce scelerisque massa a dolor vulputate, nec blandit libero auctor.",
+    "price": 1560,
+    "quantity": 10,
+    "brand_id": 1,
+    "is_enable": 1
+  },
+  {
+    "category": "smartphones",
+    "name": "iPhone 11 Pro Max",
+    "image": "products_images/AppleiPhone11ProMax.jpg",
+    "characteristics": "Связь: Диапазоны GSM 900, 1800 Bluetooth 3.0 \r\nПитание: Тип аккумулятора Литий-ионный, Разъем для зарядки Micro USB,Аккумулятор (мАч) 950\r\nКорпус: Тип корпуса классический\r\nФонарик:да\r\nВысота: 136.6(мм)\r\nШирина: 58(мм)\r\nТолщина: 8.5(мм)\r\nВес: 85(г)\r\nМатериал корпуса: металл",
+    "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula cursus sollicitudin. Sed nec risus et erat commodo rhoncus. Maecenas non nisl quis purus venenatis vulputate et ut nibh. Vestibulum nec erat sapien. Praesent auctor dolor in augue malesuada, non tempor dui tristique. In gravida, augue nec",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula cursus sollicitudin. Sed nec risus et erat commodo rhoncus. Maecenas non nisl quis purus venenatis vulputate et ut nibh. Vestibulum nec erat sapien. Praesent auctor dolor in augue malesuada, non tempor dui tristique. In gravida, augue nec molestie iaculis, dolor odio accumsan urna, in semper nibh orci vitae lacus. Vestibulum gravida at tortor in auctor. Maecenas ut erat nisl. Vestibulum venenatis, eros sit amet dignissim egestas, est nisi varius est, non porta tortor mauris et mauris. Vestibulum luctus tellus at arcu molestie, quis pretium urna efficitur. Sed ut aliquet risus. Curabitur eget sagittis sem. Etiam gravida mauris vitae turpis suscipit, dictum mollis libero semper. Nam vitae venenatis eros. Fusce scelerisque massa a dolor vulputate, nec blandit libero auctor.",
+    "price": 131990,
+    "quantity": 9,
+    "brand_id": 2,
+    "is_enable": 1
+  },
+  {
+    "category": "tablets",
+    "name": "tab e7",
+    "image": "products_images/lenovo-tab-e7.jpg",
+    "characteristics": "Диагональ дисплея (дюйм): 7\r\nКоличество ядер: 4\r\nВстроенная память (Гб): 16\r\nВес (г): 272\r\nВсе характеристики",
+    "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula cursus sollicitudin. Sed nec risus et erat commodo rhoncus. Maecenas non nisl quis purus venenatis vulputate et ut nibh. Vestibulum nec erat sapien. Praesent auctor dolor in augue malesuada, non tempor dui tristique. In gravida, augue nec molestie iaculis, dolor odio accumsan urna, in semper nibh orci vitae lacus. Vestibulum gravida at tortor in",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula cursus sollicitudin. Sed nec risus et erat commodo rhoncus. Maecenas non nisl quis purus venenatis vulputate et ut nibh. Vestibulum nec erat sapien. Praesent auctor dolor in augue malesuada, non tempor dui tristique. In gravida, augue nec molestie iaculis, dolor odio accumsan urna, in semper nibh orci vitae lacus. Vestibulum gravida at tortor in auctor. Maecenas ut erat nisl. Vestibulum venenatis, eros sit amet dignissim egestas, est nisi varius est, non porta tortor mauris et mauris. Vestibulum luctus tellus at arcu molestie, quis pretium urna efficitur. Sed ut aliquet risus. Curabitur eget sagittis sem. Etiam gravida mauris vitae turpis suscipit, dictum mollis libero semper. Nam vitae venenatis eros. Fusce scelerisque massa a dolor vulputate, nec blandit libero auctor.",
+    "price": 6000,
+    "quantity": 12,
+    "brand_id": 3,
+    "is_enable": 1
+  },
+  {
+    "category": "accessories",
+    "name": "AirPods Pro",
+    "image": "products_images/AirPodsPro.jpg",
+    "characteristics": "Тип наушников: вставные (\"затычки\")\r\nТип крепления: без крепления\r\nАкустическое оформление: открытое\r\nВремя работы в режиме воспроизведения (ч): 5",
+    "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula cursus sollicitudin. Sed nec risus et erat commodo rhoncus. Maecenas non nisl quis purus venenatis vulputate et ut nibh. Vestibulum nec erat sapien. Praesent auctor dolor in augue malesuada, non tempor dui tristique. In gravida, augue nec",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula cursus sollicitudin. Sed nec risus et erat commodo rhoncus. Maecenas non nisl quis purus venenatis vulputate et ut nibh. Vestibulum nec erat sapien. Praesent auctor dolor in augue malesuada, non tempor dui tristique. In gravida, augue nec molestie iaculis, dolor odio accumsan urna, in semper nibh orci vitae lacus. Vestibulum gravida at tortor in auctor. Maecenas ut erat nisl. Vestibulum venenatis, eros sit amet dignissim egestas, est nisi varius est, non porta tortor mauris et mauris. Vestibulum luctus tellus at arcu molestie, quis pretium urna efficitur. Sed ut aliquet risus. Curabitur eget sagittis sem. Etiam gravida mauris vitae turpis suscipit, dictum mollis libero semper. Nam vitae venenatis eros. Fusce scelerisque massa a dolor vulputate, nec blandit libero auctor.",
+    "price": 21000,
+    "quantity": 12,
+    "brand_id": 2,
+    "is_enable": 1
+  },
+  {
+    "category": "smartphones",
+    "name": "Redmi Note 8 Pro",
+    "image": "products_images/RedmiNote8Projpg.jpg",
+    "characteristics": "Связь: Диапазоны GSM 900, 1800 Bluetooth 3.0 \r\nРазъем для синхронизации:microUSB\r\nАудиоразъем: 3.5 мм\r\nSIM-карта: обычная\r\nКол-во SIM-карт: 2\r\nПитание: Тип аккумулятора Литий-ионный, Разъем для зарядки Micro USB,Аккумулятор (мАч) 950\r\nКорпус: Тип корпуса классический\r\nФонарик:да\r\nВысота: 136.6(мм)\r\nШирина: 58(мм)\r\nТолщина: 8.5(мм)\r\nВес: 85(г)\r\nМатериал корпуса: металл",
+    "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula cursus sollicitudin. Sed nec risus et erat commodo rhoncus. Maecenas non nisl quis purus venenatis vulputate et ut nibh. Vestibulum nec erat sapien. Praesent auctor dolor in augue malesuada, non tempor dui tristique. In gravida, augue nec",
+    "description": "molestie iaculis, dolor odio accumsan urna, in semper nibh orci vitae lacus. Vestibulum gravida at tortor in auctor. Maecenas ut erat nisl. Vestibulum venenatis, eros sit amet dignissim egestas, est nisi varius est, non porta tortor mauris et mauris. Vestibulum luctus tellus at arcu molestie, quis pretium urna efficitur. Sed ut aliquet risus. Curabitur eget sagittis sem. Etiam gravida mauris vitae turpis suscipit, dictum mollis libero semper. Nam vitae venenatis eros. Fusce scelerisque massa a dolor vulputate, nec blandit libero auctor.",
+    "price": 20000,
+    "quantity": 11,
+    "brand_id": 4,
+    "is_enable": 1
+  },
+  {
+    "category": "smartphones",
+    "name": "Redmi 8",
+    "image": "products_images/redmi8.jpg",
+    "characteristics": "Диагональ (дюйм): 6.22\r\nРазрешение (пикс): 1520x720\r\nВстроенная память (Гб): 64\r\nФотокамера (Мп): 12 + 2 (двойная)\r\nПроцессор: Qualcomm Snapdragon 439",
+    "short_description": "Аккумулятор! Ходит три дня, никаким хваленым айфонам такое не снилось! ОЧЕНЬ удобная интуитивная операционка с миллионом настроек. Рекомендую!\r\n\r\nЧёт пока не нашел никаких. Разве что камера для селфи могла быть получше, но я нечасто ей пользуюсь.\r\n\r\nЭто уже мой третий Сяоми. Первой была старенькая \"тройка\", которая честно отработала 3 года без единого нарекания, но потом стала напрягать быстро кончающейся памятью.",
+    "description": "Vestibulum luctus tellus at arcu molestie, quis pretium urna efficitur. Sed ut aliquet risus. Curabitur eget sagittis sem. Etiam gravida mauris vitae turpis suscipit, dictum mollis libero semper. Nam vitae venenatis eros. Fusce scelerisque massa a dolor vulputate, nec blandit libero auctor.",
+    "price": 11000,
+    "quantity": 30,
+    "brand_id": 4,
+    "is_enable": 1
+  },
+  {
+    "category": "accessories",
+    "name": "Beats Solo Pro",
+    "image": "products_images/BeatsSoloPro.jpg",
+    "characteristics": "Связь: Диапазоны GSM 900, 1800 Bluetooth 3.0 \r\nРазъем для синхронизации:microUSB\r\nДисплей: TFT, Диагональ (дюйм)2.8, Разрешение (пикс) 320x240\r\nФотокамера: (Мп)0.3, Разрешение фотосъемки (пикс)640 x 480, Вспышка светодиодная\r\nПамять: Поддержка карт памяти MicroSD, MicroSDHC, Макс. объем карты памяти 16 Гб\r\nПитание: Тип аккумулятора Литий-ионный, Разъем для зарядки Micro USB,Аккумулятор (мАч) 950\r\nКорпус: Тип корпуса классический\r\nФонарик:да\r\nВысота: 136.6(мм)\r\nШирина: 58(мм)\r\nТолщина: 8.5(мм)\r\nВес: 85(г)\r\nМатериал корпуса: металл",
+    "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula cursus sollicitudin. Sed nec risus et erat commodo rhoncus. Maecenas non nisl quis purus venenatis vulputate et ut nibh. Vestibulum nec erat sapien. Praesent auctor dolor in augue malesuada, non tempor dui tristique. In gravida, augue nec",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula cursus sollicitudin. Sed nec risus et erat commodo rhoncus. Maecenas non nisl quis purus venenatis vulputate et ut nibh. Vestibulum nec erat sapien. Praesent auctor dolor in augue malesuada, non tempor dui tristique. In gravida, augue nec molestie iaculis, dolor odio accumsan urna, in semper nibh orci vitae lacus. Vestibulum gravida at tortor in auctor. Maecenas ut erat nisl. Vestibulum venenatis, eros sit amet dignissim egestas, est nisi varius est, non porta tortor mauris et mauris. Vestibulum luctus tellus at arcu molestie, quis pretium urna efficitur. Sed ut aliquet risus. Curabitur eget sagittis sem. Etiam gravida mauris vitae turpis suscipit, dictum mollis libero semper. Nam vitae venenatis eros. Fusce scelerisque massa a dolor vulputate, nec blandit libero auctor.",
+    "price": 20000,
+    "quantity": 21,
+    "brand_id": 5,
+    "is_enable": 1
+  },
+  {
+    "category": "tablets",
+    "name": "MediaPad T3",
+    "image": "products_images/HuaweiMediaPadT3.jpg",
+    "characteristics": "Связь: Диапазоны GSM 900, 1800 Bluetooth 3.0 \r\nРазъем для синхронизации:microUSB\r\nДисплей: TFT, Диагональ (дюйм)2.8, Разрешение (пикс) 320x240\r\nФотокамера: (Мп)0.3, Разрешение фотосъемки (пикс)640 x 480, Вспышка светодиодная\r\nПамять: Поддержка карт памяти MicroSD, MicroSDHC, Макс. объем карты памяти 16 Гб\r\nМультимедиа: Аудиоплеер FM - радио\r\nАудиоразъем: 3.5 мм\r\nSIM-карта: обычная\r\nКол-во SIM-карт: 2\r\nПитание: Тип аккумулятора Литий-ионный, Разъем для зарядки Micro USB,Аккумулятор (мАч) 950\r\nКорпус: Тип корпуса классический\r\nВес: 85(г)\r\nМатериал корпуса: металл",
+    "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula cursus sollicitudin. Sed nec risus et erat commodo rhoncus. Maecenas non nisl quis purus venenatis vulputate et ut nibh. Vestibulum nec erat sapien. Praesent auctor dolor in augue malesuada, non tempor dui tristique. In gravida, augue nec molestie iaculis, dolor odio accumsan urna, in semper nibh orci vitae lacus. Vestibulum gravida at tortor in",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula cursus sollicitudin. Sed nec risus et erat commodo rhoncus. Maecenas non nisl quis purus venenatis vulputate et ut nibh. Vestibulum nec erat sapien. Praesent auctor dolor in augue malesuada, non tempor dui tristique. In gravida, augue nec molestie iaculis, dolor odio accumsan urna, in semper nibh orci vitae lacus. Vestibulum gravida at tortor in auctor. Maecenas ut erat nisl. Vestibulum venenatis, eros sit amet dignissim egestas, est nisi varius est, non porta tortor mauris et mauris. Vestibulum luctus tellus at arcu molestie, quis pretium urna efficitur. Sed ut aliquet risus. Curabitur eget sagittis sem. Etiam gravida mauris vitae turpis suscipit, dictum mollis libero semper. Nam vitae venenatis eros. Fusce scelerisque massa a dolor vulputate, nec blandit libero auctor.",
+    "price": 6000,
+    "quantity": 20,
+    "brand_id": 6,
+    "is_enable": 1
+  },
+  {
+    "category": "phones",
+    "name": "105 Single SIM",
+    "image": "products_images/105SingleSIM.jpg",
+    "characteristics": "Связь: Диапазоны GSM 900, 1800 Bluetooth 3.0;\r\nРазъем для синхронизации: microUSB;\r\nДисплей: TFT, Диагональ (дюйм)2.8, Разрешение (пикс) 320x240;\r\nФотокамера: (Мп)0.3, Разрешение фотосъемки (пикс)640 x 480, Вспышка светодиодная;\r\nПамять: Поддержка карт памяти MicroSD, MicroSDHC, Макс. объем карты памяти 16 Гб;\r\nМультимедиа: Аудиоплеер FM - радио;\r\nАудиоразъем: 3.5 мм;\r\nSIM-карта: обычная;\r\nКол-во SIM-карт: 2;\r\nПитание: Тип аккумулятора Литий-ионный, Разъем для зарядки Micro USB,Аккумулятор (мАч) 950;\r\nКорпус: Тип корпуса классический;\r\nФонарик:да;\r\nВысота: 136.6(мм);\r\nШирина: 58(мм);\r\nТолщина: 8.5(мм);",
+    "short_description": "Краткое описание : 105 Single SIM.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula cursus sollicitudin. Sed nec risus et erat commodo rhoncus. Maecenas non nisl quis purus venenatis vulputate et ut nibh.",
+    "description": "Описание:105 Single SIM.\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vehicula cursus sollicitudin. Sed nec risus et erat commodo rhoncus. Maecenas non nisl quis purus venenatis vulputate et ut nibh. Vestibulum nec erat sapien. Praesent auctor dolor in augue malesuada, non tempor dui tristique. In gravida, augue nec molestie iaculis, dolor odio accumsan urna, in semper nibh orci vitae lacus. Vestibulum gravida at tortor in auctor. Maecenas ut erat nisl. Vestibulum venenatis, eros sit amet dignissim egestas, est nisi varius est, non porta tortor mauris et mauris. Vestibulum luctus tellus at arcu molestie, quis pretium urna efficitur. Sed ut aliquet risus. Curabitur eget sagittis sem. Etiam gravida mauris vitae turpis suscipit, dictum mollis libero semper. Nam vitae venenatis eros. Fusce scelerisque massa a dolor vulputate, nec blandit libero auctor.",
+    "price": 1200,
+    "quantity": 28,
+    "brand_id": 7,
+    "is_enable": 1
+  }
+]

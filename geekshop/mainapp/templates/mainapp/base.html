@@ -38,10 +38,7 @@
                                 </nav>
                             </div>
                             <div class="top-header-menu-right col-lg-3">
-                                <button type="button" class="lk-btn btn btn-sm btn-outline-dark"><span class="lk-span">
-                                    <img src="{% static '/img/user-ico.svg'%}" class="d-inline-block align-top" alt="login">
-                                    Личный кабинет</span>
-                                </button>
+                                {% include 'mainapp/includes/inc_lk_btn.html' %}
                             </div>
                         </div>
                         <div class="row">
