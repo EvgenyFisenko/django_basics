@@ -220,17 +220,12 @@
     margin: 12px 0;
 }
 .login-div{
-    margin: 10px 0 100px 0;
+    margin: 10px;
     outline: 1px solid #ddd;
     padding: 30px;
 }
 .reg-menu{
     margin: 20px 0;
-}
-.auth-form-h-active{
-    color: #fea100;
-    font-weight: 700;
-    text-align: center;
 }
 .li-long-user-name{
     overflow: hidden;

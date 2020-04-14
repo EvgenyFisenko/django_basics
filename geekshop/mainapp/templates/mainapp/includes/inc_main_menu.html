@@ -1,10 +1,18 @@
 <ul class="header-nav navbar-nav">
-    {% for link in main_menu_links %}
-        <li class="nav-item">
-            <a href="{% url link.href %}" class="menu-a
-            {% if request.resolver_match.view_name == link.href %}
-                menu-active
-            {% endif %} ">{{ link.name }}</a>
-        </li>
-    {% endfor %}
+    <li class="nav-item">
+        <a href="{% url 'main' %}" class="menu-a {% if request.resolver_match.url_name == 'main' %}
+        menu-active {% endif %} ">ГЛАВНАЯ</a>
+    </li>
+    <li class="nav-item">
+        <a href="{% url 'products:index' %}" class="menu-a {% if request.resolver_match.namespace == 'products' %}
+        menu-active {% endif %} ">КАТАЛОГ</a>
+    </li>
+    <li class="nav-item">
+        <a href="{% url 'sales' %}" class="menu-a {% if request.resolver_match.url_name == 'sales' %}
+        menu-active {% endif %} ">СКИДКИ</a>
+    </li>
+    <li class="nav-item">
+        <a href="{% url 'contacts' %}" class="menu-a {% if request.resolver_match.url_name == 'contacts' %}
+        menu-active {% endif %} ">КОНТАКТЫ</a>
+    </li>
 </ul>

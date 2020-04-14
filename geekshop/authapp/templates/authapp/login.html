@@ -7,8 +7,7 @@
     <div class="auth-div">
         <div class="row justify-content-center">
             <div class="col-sm-5 login-div">
-                <h2 class="auth-form-h-active">Вход в систему </h2>
-                <form class="form-horizontal" action="{% url 'auth:login' %}" method="post">
+                <form class="form-horizontal" style="padding-bottom: 200px" action="{% url 'auth:login' %}" method="post">
                     {% csrf_token %}
                     {{ login_form.as_p }}
                     <br>

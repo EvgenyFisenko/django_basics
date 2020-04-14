@@ -8,7 +8,6 @@
         <div class="auth-div">
             <div class="row justify-content-center">
                 <div class="col-sm-5 login-div">
-                    <h2 class="main-top-h">Редактировать профиль</h2><br>
                     <form class="form-horizontal" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ edit_form.as_p }}
