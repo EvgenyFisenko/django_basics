@@ -1,12 +1,21 @@
 from django.shortcuts import render, get_object_or_404
 from mainapp.models import Product, ProductCategory
+from basketapp.models import Basket
+
+
+def get_basket(request):
+    basket = []
+    if request.user.is_authenticated:
+        basket = Basket.objects.filter(user=request.user)
+    return basket
 
 
 def main(request):
     product_list = Product.objects.filter(is_enable=True)[:8]
     content = {
         'title': 'Главная',
-        'products': product_list
+        'products': product_list,
+        'basket': get_basket(request),
     }
     return render(request, 'mainapp/index.html', context=content)
 
@@ -19,6 +28,7 @@ def products(request, category_id=None):
         'title': 'Каталог',
         'categories_menu_links': categories_menu_link,
         'products': product_list,
+        'basket': get_basket(request),
     }
     if category_id:
         product_list = Product.objects.filter(category__id=category_id).filter(is_enable=True)
@@ -33,6 +43,7 @@ def sales(request):
     content = {
         'title': 'Скидки',
         'products': product_list,
+        'basket': get_basket(request),
     }
     return render(request, 'mainapp/sales.html', context=content)
 
@@ -47,6 +58,7 @@ def product_detail(request, category_id, product_id):
         'title': product.name,
         'category': category,
         'product': product,
+        'basket': get_basket(request),
     }
     return render(request, 'mainapp/product_detail.html', context=content)
 
@@ -54,5 +66,6 @@ def product_detail(request, category_id, product_id):
 def contacts(request):
     content = {
         'title': 'Контакты',
+        'basket': get_basket(request),
     }
     return render(request, 'mainapp/contacts.html', context=content)
