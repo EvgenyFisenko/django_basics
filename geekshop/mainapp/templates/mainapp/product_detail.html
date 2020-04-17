@@ -24,10 +24,10 @@
                         <p>{{ product.characteristics|linebreaksbr }}</p>
                         <h3 class="detail-chars-h">{{ product.price }} руб</h3>
                         <br>
-                        <button class="add-to-cart-btn cart-btn btn my-2 my-sm-0" type="submit">
-                            <img src="/static/img/cart-plus-ico.svg" class="d-inline-block align-top" alt="to-cart">
-                                В корзину
-                        </button>
+                        <a href="{% url 'basket:add' product.pk %}" class="cart-btn cart-btn-product-card btn my-2 my-sm-0">
+                            <img src="{% static '/img/cart-plus-ico.svg'%}" class="d-inline-block align-top" alt="to-cart-ico">
+                            В корзину
+                        </a>
                     </div>
                     <br>
                 </div>
