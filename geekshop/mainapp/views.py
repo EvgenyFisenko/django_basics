@@ -1,21 +1,23 @@
+import random
+
 from django.shortcuts import render, get_object_or_404
 from mainapp.models import Product, ProductCategory
 from basketapp.models import Basket
 
 
-def get_basket(request):
-    basket = []
-    if request.user.is_authenticated:
-        basket = Basket.objects.filter(user=request.user)
-    return basket
+def get_basket(user):
+    if user.is_authenticated:
+        return Basket.objects.filter(user=user)
+    else:
+        return []
 
 
 def main(request):
-    product_list = Product.objects.filter(is_enable=True)[:8]
+    product_list = random.sample(list(Product.objects.filter(is_enable=True)), 8)
     content = {
         'title': 'Главная',
         'products': product_list,
-        'basket': get_basket(request),
+        'basket': get_basket(request.user),
     }
     return render(request, 'mainapp/index.html', context=content)
 
@@ -28,7 +30,7 @@ def products(request, category_id=None):
         'title': 'Каталог',
         'categories_menu_links': categories_menu_link,
         'products': product_list,
-        'basket': get_basket(request),
+        'basket': get_basket(request.user),
     }
     if category_id:
         product_list = Product.objects.filter(category__id=category_id).filter(is_enable=True)
@@ -43,7 +45,7 @@ def sales(request):
     content = {
         'title': 'Скидки',
         'products': product_list,
-        'basket': get_basket(request),
+        'basket': get_basket(request.user),
     }
     return render(request, 'mainapp/sales.html', context=content)
 
@@ -52,13 +54,15 @@ def product_detail(request, category_id, product_id):
     product = get_object_or_404(Product, pk=product_id)
     category = get_object_or_404(ProductCategory, pk=category_id)
     categories_menu_link = ProductCategory.objects.all()
+    same_products = Product.objects.filter(category=category_id).exclude(pk=product_id)[:4]
 
     content = {
         'categories_menu_links': categories_menu_link,
         'title': product.name,
         'category': category,
         'product': product,
-        'basket': get_basket(request),
+        'basket': get_basket(request.user),
+        'products': same_products,
     }
     return render(request, 'mainapp/product_detail.html', context=content)
 
@@ -66,6 +70,6 @@ def product_detail(request, category_id, product_id):
 def contacts(request):
     content = {
         'title': 'Контакты',
-        'basket': get_basket(request),
+        'basket': get_basket(request.user),
     }
     return render(request, 'mainapp/contacts.html', context=content)

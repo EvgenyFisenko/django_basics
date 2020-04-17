@@ -78,9 +78,6 @@
     width: 20px;
     height: 20px;
 }
-.badge-success{
-    margin-left: 10px;
-}
 .main{
     margin-top: 26px;
     padding: 0;
@@ -242,4 +239,23 @@
 }
 .cart-btn-product-card{
     margin-top: 120px;
+}
+.cart-img{
+    width: auto;
+    height: 120px;
+    margin: 20px 20px;
+    float: left;
+}
+.basket_list{
+    padding-left: 60px;
+}
+.btn-cart-delete{
+    margin: 0 0 6px 6px;
+}
+.cart-item-quantity{
+    width: 40px;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 10px 18px;
+    text-align: center;
 }
