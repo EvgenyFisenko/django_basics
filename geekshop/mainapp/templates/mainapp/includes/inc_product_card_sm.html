@@ -2,7 +2,7 @@
 {% for product in products %}
     <div class="col-sm-12 col-md-6 col-lg-3">
         <div class="card-sm-div align-middle">
-            <a href="{% url 'products:product_detail' product.category.id product.id %}" class="item-a">
+            <a href="{% url 'products:product' product.pk %}" class="item-a">
                 <p class="colored-p tax-p">{{ product.brand|title }}<br>{{ product.name|title }}</p>
                 <img class="card-img img-fluid" src="/media/{{ product.image }}" alt="product-small">
                 <p class="colored-p tax-p">{{ product.price}} руб</p>

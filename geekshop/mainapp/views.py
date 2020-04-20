@@ -22,7 +22,7 @@ def main(request):
     return render(request, 'mainapp/index.html', context=content)
 
 
-def products(request, category_id=None):
+def products(request, pk=None):
     product_list = Product.objects.filter(is_enable=True)
     categories_menu_link = ProductCategory.objects.all()
 
@@ -32,10 +32,10 @@ def products(request, category_id=None):
         'products': product_list,
         'basket': get_basket(request.user),
     }
-    if category_id:
-        product_list = Product.objects.filter(category__id=category_id).filter(is_enable=True)
+    if pk:
+        product_list = Product.objects.filter(category__pk=pk).filter(is_enable=True)
         content['products'] = product_list
-        category = get_object_or_404(ProductCategory, pk=category_id)
+        category = get_object_or_404(ProductCategory, pk=pk)
         content['title'] = category.alter_name
     return render(request, 'mainapp/products.html', context=content)
 
@@ -50,21 +50,18 @@ def sales(request):
     return render(request, 'mainapp/sales.html', context=content)
 
 
-def product_detail(request, category_id, product_id):
-    product = get_object_or_404(Product, pk=product_id)
-    category = get_object_or_404(ProductCategory, pk=category_id)
-    categories_menu_link = ProductCategory.objects.all()
-    same_products = Product.objects.filter(category=category_id).exclude(pk=product_id)[:4]
+def product(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    same_products = Product.objects.filter(category=product.category).exclude(pk=pk)[:4]
 
     content = {
-        'categories_menu_links': categories_menu_link,
+        'categories_menu_links': ProductCategory.objects.all(),
         'title': product.name,
-        'category': category,
         'product': product,
         'basket': get_basket(request.user),
         'products': same_products,
     }
-    return render(request, 'mainapp/product_detail.html', context=content)
+    return render(request, 'mainapp/product.html', context=content)
 
 
 def contacts(request):

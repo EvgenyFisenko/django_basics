@@ -3,37 +3,11 @@
 
 {% block main %}
     <div class="basket_container">
-        <div class="main-top-h-div">
-            <h3 class="main-top-h">
-                Ваша корзина, {% if user.first_name %} {{ user.first_name|title}} {% else %} Пользователь {% endif %}
-            </h3>
+        <div class="h3 text-center head reg-menu main-top-h">
+            Ваша корзина, {% if user.first_name %} {{ user.first_name|title}}{% else %}Пользователь{% endif %}
         </div>
         <div class="basket_list">
-            {% for item in basket_items %}
-                <hr>
-                <div class="basket_record">
-                    <img class="cart-img" src="/media/{{ item.product.image }}" alt="{{ item.product.short_desc }}">
-                    <br>
-                    <span class="category_name"> <h6 class="tax-p">{{ item.product.name }}</h6></span>
-                    <span class="product_name">({{ item.product.category.alter_name }})</span><br>
-                    <span class="product_price">{{ item.product.price }}&nbspруб </span>
-                    <input class="cart-item-quantity" type="number" name="{{ item.pk }}" min="0" value="{{ item.quantity }}">
-                    <span class="product_cost tax-p">{{ item.product_cost }} &nbspруб</span>
-                    <a class="btn btn-outline-danger btn-sm btn-cart-delete" href="{% url 'basket:remove' item.pk %}" > Удалить </a>
-                </div>
-                <div class="clearfix"></div>
-            {% endfor %}
-
-            <hr>
-            {% if basket_items %}
-                <div class="basket_summary logo-div">
-                    <h4 class="main-top-h">
-                        В корзине {{ basket_items.0.total_quantity }}
-                        товаров общей стоимость {{ basket_items.0.total_cost }} руб
-                    </h4>
-                    <button type="button" class="btn btn-outline-success "> Оформить заказ</button>
-                </div>
-            {% endif %}
+            {% include 'basketapp/includes/inc_basket_list.html' %}
         </div>
     </div>
 {% endblock %}

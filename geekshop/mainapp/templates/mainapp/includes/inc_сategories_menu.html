@@ -2,7 +2,7 @@
     <ul class="product-menu-nav nav justify-content-center">
         <li>
             <a href="{% url 'products:category' 0 %}" class="menu-a
-                {% if not request.resolver_match.kwargs.category_id or request.resolver_match.kwargs.category_id == 0%}
+                {% if not request.resolver_match.kwargs.pk or request.resolver_match.kwargs.pk == 0%}
                     menu-active
                 {% endif %} "> все
             </a>
@@ -10,7 +10,7 @@
         {% for link in categories_menu_links %}
             <li class="nav-item">
                 <a href="{% url 'products:category' link.id %}" class="menu-a
-                    {% if request.resolver_match.kwargs.category_id == link.id %}
+                    {% if request.resolver_match.kwargs.pk == link.id or product.category.pk == link.id %}
                         menu-active
                     {% endif %} ">{{ link.alter_name }}
                 </a>
