@@ -51,13 +51,7 @@
                                 </nav>
                             </div>
                             <div class="bottom-header-menu-right col-lg-3">
-                                <a href="{% url 'basket:view' %}" class="cart-btn btn my-2 my-sm-0">
-                                    <img src=" {% static '/img/cart-ico.svg'%}" class="d-inline-block align-top" alt="cart">
-                                    Корзина
-                                    {% if basket %}
-                                        <span class="badge badge-success"> {{ basket|length }} </span>
-                                    {% endif %}
-                                </a>
+                                {% include 'mainapp/includes/inc_basket_btn.html' %}
                             </div>
                         </div>
                     </div>
@@ -101,7 +95,8 @@
     </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{% static '/js/jquery.slim.min.js'%}"></script>
+    <script src="{% static '/js/jquery.321.min.js'%}"></script>
 	<script src="{% static '/js/bootstrap.min.js'%}"></script>
+    <script src="{% static '/js/basket_scripts.js'%}"></script>
 </body>
 </html>

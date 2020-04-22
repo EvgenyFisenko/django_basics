@@ -1,0 +1,13 @@
+{% extends 'mainapp/base.html' %}
+{% load staticfiles %}
+
+{% block main %}
+    <div class="basket_container">
+        <div class="h3 text-center head reg-menu main-top-h">
+            Ваша корзина, {% if user.first_name %} {{ user.first_name|title}}{% else %}Пользователь{% endif %}
+        </div>
+        <div class="basket_list">
+            {% include 'basketapp/includes/inc_basket_list.html' %}
+        </div>
+    </div>
+{% endblock %}
