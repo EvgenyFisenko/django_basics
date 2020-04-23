@@ -12,7 +12,7 @@
     font-size: 21px;
     font-weight: 800;
     text-transform: uppercase;
-    margin-right: 14px;
+    margin-right: 10px;
     display: inline-block;
     width: 100%;
 }
@@ -22,9 +22,6 @@
 }
 .menu-active {
     color: #fea100;
-}
-.form-inline{
-    padding-left: 0;
 }
 .search-input,
 .search-input:focus{
@@ -40,33 +37,15 @@
 .search-btn:hover{
     color: #fff;
 }
-.top-header-menu-right,
-.bottom-header-menu-right{
-    padding: 10px;
-}
-@media screen and (max-width: 768px) {
-    .top-header-menu-right,
-    .bottom-header-menu-right{
-        padding-left: 32px;
-    }
-}
-.lk-btn{
-    width: 150px;
-    overflow: hidden;
-}
-.lk-btn:hover{
-    background-color: #fea100;
-    color: #000;
-}
-.lk-btn img{
-    width: 20px;
-    height: 20px;
+.cart-btn-div{
+    padding: 6px 16px;
+    text-align: center;
 }
 .cart-btn{
-    width: 150px;
     color: #fff;
     background-color: #2c465a;
     border-color: #28a745;
+    height: 39px;
 }
 .cart-btn:hover{
     color: #fea100;
@@ -217,7 +196,7 @@
     margin: 12px 0;
 }
 .login-div{
-    margin: 10px;
+    margin: 120px;
     outline: 1px solid #ddd;
     padding: 30px;
 }
@@ -265,4 +244,29 @@
 }
 .mr240{
     margin-right: 240px;
+}
+.menu li{
+    display: inline-block;
+    margin-right: 30px;
+}
+.admin_menu,
+.users_list,
+.categories_list,
+.products_list,
+.user_delete{
+    text-align: center;
+}
+.user_record img,
+.product_record img{
+    width: 100px;
+    height: auto;
+    margin: 10px;
+}
+.not_active{
+    opacity: 0.5;
+}
+.user_record div{
+    display: inline-block;
+    margin-right: 30px;
+    text-align: left;
 }

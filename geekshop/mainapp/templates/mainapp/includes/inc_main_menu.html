@@ -1,3 +1,5 @@
+{% load static%}
+
 <ul class="header-nav navbar-nav">
     <li class="nav-item">
         <a href="{% url 'main' %}" class="menu-a {% if request.resolver_match.url_name == 'main' %}
@@ -15,4 +17,29 @@
         <a href="{% url 'contacts' %}" class="menu-a {% if request.resolver_match.url_name == 'contacts' %}
         menu-active {% endif %} ">КОНТАКТЫ</a>
     </li>
+
+    {% if user.is_superuser %}
+        <li>
+            <a href="{% url 'admin:users' %}" class="menu-a">Админка</a>
+        </li>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+        <li>
+            <a href='{% url 'auth:edit' %}' class="menu-a {% if request.resolver_match.route == 'auth/edit/' %}
+                menu-active {% endif %}" > {{ user.first_name|default:'Пользователь' }} </a>
+        </li>
+        <li>
+            <a href='{% url 'auth:logout' %}' class="menu-a"> Выход </a>
+        </li>
+    {% else %}
+        <li>
+            <a href='{% url 'auth:login' %}' class="menu-a {% if request.resolver_match.route == 'auth/login/' %} menu-active{% endif %}" > Вход </a>
+        </li>
+        <li>
+            <a href='{% url 'auth:register' %}' class="menu-a {% if request.resolver_match.route == 'auth/register/' %} menu-active{% endif %}"> Регистрация </a>
+        </li>
+    {% endif %}
 </ul>
+
+

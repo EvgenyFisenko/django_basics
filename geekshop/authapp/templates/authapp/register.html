@@ -1,12 +1,11 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
 
-
 {% block main %}
-    {% include 'authapp/includes/inc_login_menu.html'%}
     <div class="auth-div">
         <div class="row justify-content-center">
             <div class="col-sm-5 login-div">
+                <h3 class="main-top-h">Регистрация</h3><br>
                 <form class="form-horizontal" action="{% url 'auth:register' %}" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ register_form.as_p }}
