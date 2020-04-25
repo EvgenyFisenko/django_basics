@@ -24,7 +24,7 @@ def main(request):
 
 def products(request, pk=None):
     product_list = Product.objects.filter(is_enable=True)
-    categories_menu_link = ProductCategory.objects.all()
+    categories_menu_link = ProductCategory.objects.filter(is_active=True)
 
     content = {
         'title': 'Каталог',

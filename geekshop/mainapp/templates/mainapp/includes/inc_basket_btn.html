@@ -2,10 +2,11 @@
 
 <a href="{% url 'basket:view' %}" class="cart-btn btn my-2 my-sm-0">
     <img src=" {% static '/img/cart-ico.svg'%}" class="d-inline-block align-top" alt="cart">
-    Корзина
     {% if basket %}
         <span class="badge badge-success">
             {{ basket.0.total_cost|floatformat:0 }} руб ({{ basket.0.total_quantity }} шт)
         </span>
+    {% else %}
+        Корзина
     {% endif %}
 </a>

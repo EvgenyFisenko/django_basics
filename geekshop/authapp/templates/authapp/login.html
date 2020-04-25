@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block main %}
-    {% include 'authapp/includes/inc_login_menu.html'%}
     <div class="auth-div">
         <div class="row justify-content-center">
             <div class="col-sm-5 login-div">
-                <form class="form-horizontal" style="padding-bottom: 200px" action="{% url 'auth:login' %}" method="post">
+                <h3 class="main-top-h">Вход</h3><br>
+                <form class="form-horizontal" action="{% url 'auth:login' %}" method="post">
                     {% csrf_token %}
                     {% if next %}
                         <input type="hidden" name="next" value="{{ next }}">
