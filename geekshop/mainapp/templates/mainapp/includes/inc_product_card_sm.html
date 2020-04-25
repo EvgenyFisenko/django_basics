@@ -4,8 +4,8 @@
         <div class="card-sm-div align-middle">
             <a href="{% url 'products:product' product.pk %}" class="item-a">
                 <p class="colored-p tax-p">{{ product.brand|title }}<br>{{ product.name|title }}</p>
-                <img class="card-img img-fluid" src="/media/{{ product.image }}" alt="product-small">
-                <p class="colored-p tax-p">{{ product.price}} руб</p>
+                <img class="card-img img-fluid" src="/media/{{ product.image|default:'products_images/default.png' }}" alt="product-small">
+                <p class="colored-p tax-p">{{ product.price }} руб</p>
             </a><br>
             <a href="{% url 'basket:add' product.pk %}" class="cart-btn cart-btn-product-card btn my-2 my-sm-0">
                 <img src="{% static '/img/cart-plus-ico.svg'%}" class="d-inline-block align-top" alt="to-cart-ico">

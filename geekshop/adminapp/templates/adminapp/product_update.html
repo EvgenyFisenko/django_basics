@@ -2,17 +2,17 @@
 {% load static %}
 
 {% block content %}
-    <div class="auth-div">
-        <div class="row justify-content-center container-fluid">
-            <div class="col-sm-5 login-div">
+    <div class="container col-md-8">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
                 <form class="form-horizontal" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    {{ update_form.as_p }}
                     <input class="form-control" type="submit" value="сохранить">
                 </form>
                 <button class="btn btn-round form-control last">
-                    <a href="{% url 'admin:categories' %}">
-                        к списку категорий
+                    <a href="{% url 'admin:products' category.pk %}">
+                        к списку продуктов
                     </a>
                 </button>
             </div>

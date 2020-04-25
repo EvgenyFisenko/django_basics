@@ -3,12 +3,7 @@
 
 {% block content %}
     <div class="categories_list">
-        <button class="new_category">
-            <a href={% url 'admin:category_create' %}>
-                новая категория
-            </a>
-        </button>
-        <br><br>
+        <button class="new_category"> <a href={% url 'admin:category_create' %}> новая категория </a> </button>
         {% for object in objects %}
             <hr>
             <div class="category_record {% if not object.is_active %} not_active {% endif %}">

@@ -9,28 +9,18 @@
         </button>
         {% for object in objects %}
             <hr>
-            <div class="product_record">
-                <img
-                        src="/media/{{ object.image|default:'products_images/default.jpg' }}"
-                        alt="{{ object.name }}">
-                <div class="product_name">
-                    {{ object.name|title }}
-                </div>
+            <div class="product_record {% if not object.is_enable %} not_active {% endif %}">
+                <img src="/media/{{ object.image|default:'products_images/default.jpg' }}" alt="{{ object.name }}">
+                <div class="product_name">{{ object.name|title }}</div>
                 <div class="product_actions">
                     <button>
-                        <a href={% url 'admin:product_read' object.pk %}>
-                            подробнее
-                        </a>
+                        <a href={% url 'admin:product_read' object.pk %}>подробнее</a>
                     </button>
                     <button>
-                        <a href={% url 'admin:product_update' object.pk %}>
-                            редактировать
-                        </a>
+                        <a href={% url 'admin:product_update' object.pk %}>редактировать</a>
                     </button>
                     <button>
-                        <a href={% url 'admin:product_delete' object.pk %}>
-                            удалить
-                        </a>
+                        <a href={% url 'admin:product_delete' object.pk %}>удалить</a>
                     </button>
                 </div>
                 <div class="summary">
