@@ -1,5 +1,6 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
+{% load my_tags %}
 
 {% block main %}
     <div class="container">
@@ -13,7 +14,7 @@
                         <input class="form-control" type="submit" value="сохранить">
                     </form>
                     <div class="user_avatar">
-                        <img src="/media/{{ user.avatar }}" alt="avatar">
+                        <img src="{{ user.avatar|media_folder_users }}" alt="avatar">
                     </div>
                 </div>
             </div>

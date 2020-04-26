@@ -1,5 +1,6 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
+{% load my_tags %}
 
 {% block main %}
     <div class="main container">
@@ -13,8 +14,8 @@
         <div class="product container">
             <div class="row">
                 <div class="product-detail-img-div col-md-5">
-                    <a href="/media/{{ product.image|default:'products_images/default.png' }}" target="_blank">
-                        <img class="detail-img img-fluid" src="/media/{{ product.image|default:'products_images/default.png' }}" alt="product-image">
+                    <a href="{{ product.image|media_folder_products}}" target="_blank">
+                        <img class="detail-img img-fluid" src="{{ product.image|media_folder_products}}" alt="product-image">
                     </a>
                 </div>
                 <div class="product-detail-chars-div col-md-7">

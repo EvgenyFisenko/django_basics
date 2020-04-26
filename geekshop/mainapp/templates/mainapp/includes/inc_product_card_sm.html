@@ -1,10 +1,12 @@
 {% load static %}
+{% load my_tags %}
+
 {% for product in products %}
     <div class="col-sm-12 col-md-6 col-lg-3">
         <div class="card-sm-div align-middle">
             <a href="{% url 'products:product' product.pk %}" class="item-a">
                 <p class="colored-p tax-p">{{ product.brand|title }}<br>{{ product.name|title }}</p>
-                <img class="card-img img-fluid" src="/media/{{ product.image|default:'products_images/default.png' }}" alt="product-small">
+                <img class="card-img img-fluid" src="{{ product.image|media_folder_products}}" alt="product-small">
                 <p class="colored-p tax-p">{{ product.price }} руб</p>
             </a><br>
             <a href="{% url 'basket:add' product.pk %}" class="cart-btn cart-btn-product-card btn my-2 my-sm-0">

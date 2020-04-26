@@ -64,10 +64,10 @@ def sales(request):
 
 def product(request, pk):
     product = get_object_or_404(Product, pk=pk)
-    same_products = Product.objects.filter(category=product.category).exclude(pk=pk)[:4]
+    same_products = Product.objects.filter(category=product.category).filter(is_enable=True).exclude(pk=pk)[:4]
 
     content = {
-        'categories_menu_links': ProductCategory.objects.all(),
+        'categories_menu_links': ProductCategory.objects.filter(is_active=True),
         'title': product.name,
         'product': product,
         'basket': get_basket(request.user),
