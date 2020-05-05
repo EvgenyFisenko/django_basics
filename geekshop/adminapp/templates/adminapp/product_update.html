@@ -1,18 +1,17 @@
-{% extends 'mainapp/base.html' %}
+{% extends 'adminapp/base.html' %}
 {% load static %}
 
-
-{% block main %}
-    <div class="auth-div">
+{% block content %}
+    <div class="container col-md-8">
         <div class="row justify-content-center">
-            <div class="col-sm-5 login-div">
+            <div class="col-md-8">
                 <form class="form-horizontal" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <input class="form-control" type="submit" value="сохранить">
                 </form>
                 <button class="btn btn-round form-control last">
-                    <a href="{% url 'admin:users' %}">к списку пользователей</a>
+                    <a href="{% url 'admin:products' category %}">к списку продуктов</a>
                 </button>
             </div>
         </div>

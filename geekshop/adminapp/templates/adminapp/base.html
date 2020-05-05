@@ -12,7 +12,7 @@
 
     <title>
         {% block title %}
-            {{ title|title }}
+            {{ title|default:'Админка'|title }}
         {% endblock %}
     </title>
 </head>
@@ -21,13 +21,16 @@
         <div class="h2 text-center head">
             Админка
         </div>
+
         {% block menu %}
             <div class="admin_menu">
                 {% include 'adminapp/includes/inc_menu.html' %}
             </div>
         {% endblock %}
+
         {% block content %}
         {% endblock %}
+
     </div>
 </body>
 </html>

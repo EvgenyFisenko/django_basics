@@ -3,8 +3,8 @@
 
 {% block content %}
     <div class="user_delete">
-        Уверены, что хотите удалить <br> {{ category_to_delete.name }} <br> ({{ category_to_delete.alter_name }})? <br> <br>
-        <form action="{% url 'admin:category_delete' category_to_delete.pk %}"
+        Уверены, что хотите удалить <br> {{ object.name }} <br> ({{ object.alter_name }})? <br> <br>
+        <form action="{% url 'admin:category_delete' object.pk %}"
               method="post">
             {% csrf_token %}
             <input class="btn btn-danger" type="submit" value="Удалить">

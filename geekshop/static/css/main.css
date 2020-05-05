@@ -253,11 +253,14 @@
 .users_list,
 .categories_list,
 .products_list,
-.user_delete{
+.user_delete,
+.product_read{
     text-align: center;
 }
+.user_avatar img,
 .user_record img,
-.product_record img{
+.product_record img,
+.product_read img{
     width: 100px;
     height: auto;
     margin: 10px;

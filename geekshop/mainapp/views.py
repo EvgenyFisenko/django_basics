@@ -1,5 +1,6 @@
 import random
 
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404
 from mainapp.models import Product, ProductCategory
 from basketapp.models import Basket
@@ -22,21 +23,32 @@ def main(request):
     return render(request, 'mainapp/index.html', context=content)
 
 
-def products(request, pk=None):
-    product_list = Product.objects.filter(is_enable=True)
-    categories_menu_link = ProductCategory.objects.filter(is_active=True)
-
-    content = {
-        'title': 'Каталог',
-        'categories_menu_links': categories_menu_link,
-        'products': product_list,
-        'basket': get_basket(request.user),
-    }
+def products(request, pk=None, page=1):
     if pk:
         product_list = Product.objects.filter(category__pk=pk).filter(is_enable=True)
-        content['products'] = product_list
         category = get_object_or_404(ProductCategory, pk=pk)
-        content['title'] = category.alter_name
+        content = {
+            'title': category.alter_name,
+            'category': category,
+        }
+    else:
+        product_list = Product.objects.filter(is_enable=True, category__is_active=True)
+        content = {
+            'title': 'Каталог',
+        }
+
+    paginator = Paginator(product_list, 2)
+    try:
+        products_paginator = paginator.page(page)
+    except PageNotAnInteger:
+        products_paginator = paginator.page(1)
+    except EmptyPage:
+        products_paginator = paginator.page(paginator.num_pages)
+
+    content['products'] = products_paginator
+    content['categories_menu_links'] = ProductCategory.objects.filter(is_active=True)
+    content['basket'] = get_basket(request.user)
+
     return render(request, 'mainapp/products.html', context=content)
 
 
@@ -52,10 +64,10 @@ def sales(request):
 
 def product(request, pk):
     product = get_object_or_404(Product, pk=pk)
-    same_products = Product.objects.filter(category=product.category).exclude(pk=pk)[:4]
+    same_products = Product.objects.filter(category=product.category).filter(is_enable=True).exclude(pk=pk)[:4]
 
     content = {
-        'categories_menu_links': ProductCategory.objects.all(),
+        'categories_menu_links': ProductCategory.objects.filter(is_active=True),
         'title': product.name,
         'product': product,
         'basket': get_basket(request.user),
