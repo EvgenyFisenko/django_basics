@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-import os
+import os, json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'mainapp',
     'authapp',
     'basketapp',
-    'adminapp'
+    'adminapp',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -149,3 +150,19 @@ EMAIL_USE_SSL = False
 # вариант логирования сообщений почты в виде файлов вместо отправки
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = 'tmp/email-messages/'
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.vk.VKOAuth2',
+)
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
+SOCIAL_AUTH_VK_OAUTH2_KEY = '7457202'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = '3Sfe36fYQiAF6dtcYpXY'
+
+# with open('vk.json', 'r', encoding="utf-8") as f:
+#     VK = json.load(f)
+#
+# SOCIAL_AUTH_VK_OAUTH2_KEY = VK['SOCIAL_AUTH_VK_OAUTH2_KEY']
+# SOCIAL_AUTH_VK_OAUTH2_SECRET = VK['SOCIAL_AUTH_VK_OAUTH2_SECRET']

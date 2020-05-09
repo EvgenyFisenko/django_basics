@@ -5,16 +5,27 @@
     <div class="auth-div">
         <div class="row justify-content-center">
             <div class="col-sm-5 login-div">
-                <h3 class="main-top-h">Вход</h3><br>
+                <h3 class="main-top-h">Вход</h3>
+                <hr>
                 <form class="form-horizontal" action="{% url 'auth:login' %}" method="post">
                     {% csrf_token %}
                     {% if next %}
                         <input type="hidden" name="next" value="{{ next }}">
                     {% endif %}
                     {{ login_form.as_p }}
-                    <br>
-                    <input class="form-control" type="submit" value="войти">
+                    <input class="form-control btn btn-success auth-btn" type="submit" value="Войти">
                 </form>
+
+                <button class="btn btn-secondary form-control auth-btn">
+                    <a  href="{% url 'auth:register' %}" class="login-a ">
+                        Зарегистрироваться
+                    </a>
+                </button>
+                <button class="btn btn-primary form-control auth-btn">
+                    <a  href="{% url 'social:begin' 'vk-oauth2' %}?next=/" class="login-a ">
+                        Вход через ВКонтакте
+                    </a>
+                </button>
             </div>
         </div>
     </div>
