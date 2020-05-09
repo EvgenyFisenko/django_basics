@@ -3,14 +3,6 @@ import random
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404
 from mainapp.models import Product, ProductCategory
-from basketapp.models import Basket
-
-
-def get_basket(user):
-    if user.is_authenticated:
-        return Basket.objects.filter(user=user)
-    else:
-        return []
 
 
 def main(request):
@@ -18,7 +10,6 @@ def main(request):
     content = {
         'title': 'Главная',
         'products': product_list,
-        'basket': get_basket(request.user),
     }
     return render(request, 'mainapp/index.html', context=content)
 
@@ -47,7 +38,6 @@ def products(request, pk=None, page=1):
 
     content['products'] = products_paginator
     content['categories_menu_links'] = ProductCategory.objects.filter(is_active=True)
-    content['basket'] = get_basket(request.user)
 
     return render(request, 'mainapp/products.html', context=content)
 
@@ -57,7 +47,6 @@ def sales(request):
     content = {
         'title': 'Скидки',
         'products': product_list,
-        'basket': get_basket(request.user),
     }
     return render(request, 'mainapp/sales.html', context=content)
 
@@ -70,7 +59,6 @@ def product(request, pk):
         'categories_menu_links': ProductCategory.objects.filter(is_active=True),
         'title': product.name,
         'product': product,
-        'basket': get_basket(request.user),
         'products': same_products,
     }
     return render(request, 'mainapp/product.html', context=content)
@@ -79,6 +67,5 @@ def product(request, pk):
 def contacts(request):
     content = {
         'title': 'Контакты',
-        'basket': get_basket(request.user),
     }
     return render(request, 'mainapp/contacts.html', context=content)

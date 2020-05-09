@@ -250,7 +250,6 @@
     margin-right: 30px;
 }
 .admin_menu,
-.users_list,
 .categories_list,
 .products_list,
 .user_delete,
@@ -272,4 +271,7 @@
     display: inline-block;
     margin-right: 30px;
     text-align: left;
+}
+.users_list{
+    padding-left: 200px;
 }

@@ -4,6 +4,7 @@
 *.pyc
 __pycache__/
 local_settings.py
+geekshop/venv/*
 
 # Created by https://www.gitignore.io/api/pycharm
 # Edit at https://www.gitignore.io/?templates=pycharm
