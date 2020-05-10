@@ -10,6 +10,17 @@ from authapp.models import ShopUserProfile
 
 
 def save_user_profile(backend, user, response, *args, **kwargs):
+    languages = {
+        '0': 'русский',
+        '1': 'украинский',
+        '2': 'белорусский',
+        '3': 'английский',
+        '4': 'испанский',
+        '5': 'финский',
+        '6': 'немецкий',
+        '7': 'итальянский',
+    }
+
     if backend.name != 'vk-oauth2':
         return
 
@@ -17,7 +28,7 @@ def save_user_profile(backend, user, response, *args, **kwargs):
                           'api.vk.com',
                           '/method/users.get',
                           None,
-                          urlencode(OrderedDict(fields=','.join(('bdate', 'sex', 'about')),
+                          urlencode(OrderedDict(fields=','.join(('bdate', 'sex', 'about', 'lang', 'domain')),
                                                 access_token=response['access_token'],
                                                 v='5.92')),
                           None
@@ -36,10 +47,17 @@ def save_user_profile(backend, user, response, *args, **kwargs):
 
     if data['bdate']:
         bdate = datetime.strptime(data['bdate'], '%d.%m.%Y').date()
-
         age = timezone.now().date().year - bdate.year
+        user.age = age
+
         if age < 18:
             user.delete()
             raise AuthForbidden('social_core.backends.vk.VKOAuth2')
+
+    if data['domain']:
+        user.shopuserprofile.vk_addr = f'https://vk.com/{data["domain"]}'
+
+    if data['language'] and data['language'] in languages.keys():
+        user.shopuserprofile.vk_lang = languages[data['language']]
 
     user.save()
