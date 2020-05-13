@@ -19,11 +19,11 @@
 {% endfor %}
 <hr>
 {% if basket_items %}
-    <div class="basket_summary logo-div">
+    <div class="basket_summary logo-div mb200">
         <h4 class="main-top-h">
             В корзине {{ basket_items.0.total_quantity }}
             товаров общей стоимость {{ basket_items.0.total_cost }} руб
         </h4>
-        <button type="button" class="btn btn-outline-success "> Оформить заказ</button>
+        <a href="{% url 'ordersapp:order_create' %}" class="btn btn-outline-success"> Оформить заказ </a>
     </div>
 {% endif %}

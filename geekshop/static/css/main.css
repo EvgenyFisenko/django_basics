@@ -291,3 +291,35 @@ input#id_avatar{
 .user_avatar img{
     padding-top: 20px;
 }
+.dropdown-menu{
+    background: #ddd;
+    padding-left: 20px;
+}
+.dropdown li a {
+    color: #2c465a;
+    font-size: 18px;
+}
+.mb200{
+    margin-bottom: 200px;
+}
+.category_delete {
+    margin: 50px auto;
+    width: 600px;
+    font-size: 150%;
+}
+
+.category_delete .btn {
+    display: block;
+    float:left;
+    margin: 25px;
+    width: 150px;
+    color: #111;
+}
+
+.category_delete a {
+    color: #111;
+    text-decoration: none;
+}
+.login-div ul.errorlist {
+    display:none;
+}
