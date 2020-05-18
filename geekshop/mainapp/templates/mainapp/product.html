@@ -23,6 +23,7 @@
                         <h3 class="detail-chars-h">{{ product.brand|title}}</h3>
                         <h5 class="detail-chars-h">{{ product.name}}</h5>
                         <p>{{ product.characteristics|linebreaksbr }}</p>
+                        <h5 class="detail-chars-h">В наличии: {{ product.quantity }} шт.</h5>
                         <h3 class="detail-chars-h">{{ product.price }} руб</h3>
                         <br>
                         <a href="{% url 'basket:add' product.pk %}" class="cart-btn cart-btn-product-card btn my-2 my-sm-0">
