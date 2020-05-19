@@ -34,3 +34,7 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.name} {self.brand.name} ({self.category.name})"
+
+    @staticmethod
+    def get_items():
+        return Product.objects.filter(is_enable=True).order_by('category', 'name')
