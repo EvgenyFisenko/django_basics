@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.db.models.signals import pre_save, pre_delete
 from django.dispatch import receiver
 from django.http import JsonResponse
@@ -6,6 +7,7 @@ from django.urls import reverse, reverse_lazy
 from django.db import transaction
 
 from django.forms import inlineformset_factory
+from django.utils.decorators import method_decorator
 
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
@@ -16,6 +18,7 @@ from ordersapp.models import Order, OrderItem
 from ordersapp.forms import OrderItemForm
 
 
+@method_decorator(login_required(), name='dispatch')
 class OrderList(ListView):
     model = Order
 
@@ -23,6 +26,7 @@ class OrderList(ListView):
         return Order.objects.filter(user=self.request.user)
 
 
+@method_decorator(login_required(), name='dispatch')
 class OrderItemsCreate(CreateView):
     model = Order
     fields = []
@@ -69,6 +73,7 @@ class OrderItemsCreate(CreateView):
         return super(OrderItemsCreate, self).form_valid(form)
 
 
+@method_decorator(login_required(), name='dispatch')
 class OrderRead(DetailView):
     model = Order
 
@@ -78,6 +83,7 @@ class OrderRead(DetailView):
         return context
 
 
+@method_decorator(login_required(), name='dispatch')
 class OrderItemsUpdate(UpdateView):
     model = Order
     fields = []
@@ -89,7 +95,8 @@ class OrderItemsUpdate(UpdateView):
         if self.request.POST:
             data['orderitems'] = OrderFormSet(self.request.POST, instance=self.object)
         else:
-            formset = OrderFormSet(instance=self.object)
+            queryset = self.object.orderitems.select_related()
+            formset = OrderFormSet(instance=self.object, queryset=queryset)
             for form in formset.forms:
                 if form.instance.pk:
                     form.initial['price'] = form.instance.product.price
@@ -113,6 +120,7 @@ class OrderItemsUpdate(UpdateView):
         return super(OrderItemsUpdate, self).form_valid(form)
 
 
+@method_decorator(login_required(), name='dispatch')
 class OrderDelete(DeleteView):
     model = Order
     success_url = reverse_lazy('ordersapp:orders_list')
