@@ -6,7 +6,8 @@ from mainapp.models import Product, ProductCategory
 
 
 def main(request):
-    product_list = random.sample(list(Product.objects.filter(is_enable=True)), 8)
+    product_list = Product.objects.filter(is_enable=True, category__is_active=True).select_related('category')[:8]
+
     content = {
         'title': 'Главная',
         'products': product_list,
@@ -52,8 +53,8 @@ def sales(request):
 
 
 def product(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    same_products = Product.objects.filter(category=product.category).filter(is_enable=True).exclude(pk=pk)[:4]
+    product = get_object_or_404(Product.objects.select_related(), pk=pk)
+    same_products = Product.objects.filter(category=product.category).filter(is_enable=True).exclude(pk=pk).select_related()[:4]
 
     content = {
         'categories_menu_links': ProductCategory.objects.filter(is_active=True),
