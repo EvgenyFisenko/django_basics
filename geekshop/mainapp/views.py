@@ -2,7 +2,10 @@ import random
 
 from django.core.cache import cache
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
+from django.template.loader import render_to_string
+from django.views.decorators.cache import never_cache
 
 from geekshop import settings
 from mainapp.models import Product, ProductCategory
@@ -19,6 +22,7 @@ def main(request):
     return render(request, 'mainapp/index.html', context=content)
 
 
+# @never_cache
 def products(request, pk=None, page=1):
     if pk:
         product_list = Product.objects.filter(category__pk=pk).filter(is_enable=True)
@@ -47,6 +51,36 @@ def products(request, pk=None, page=1):
     return render(request, 'mainapp/products.html', context=content)
 
 
+def products_ajax(request, pk=None, page=1):
+    if pk:
+        product_list = Product.objects.filter(category__pk=pk).filter(is_enable=True)
+        category = get_object_or_404(ProductCategory, pk=pk)
+        content = {
+            'title': category.alter_name,
+            'category': category,
+        }
+    else:
+        product_list = Product.objects.filter(is_enable=True, category__is_active=True)
+        content = {
+            'title': 'Каталог',
+        }
+
+    paginator = Paginator(product_list, 2)
+    try:
+        products_paginator = paginator.page(page)
+    except PageNotAnInteger:
+        products_paginator = paginator.page(1)
+    except EmptyPage:
+        products_paginator = paginator.page(paginator.num_pages)
+
+    content['products'] = products_paginator
+    content['categories_menu_links'] = ProductCategory.objects.filter(is_active=True)
+
+    result = render_to_string('mainapp/includes/inc_products_list_content.html', context=content, request=request)
+
+    return JsonResponse({'result': result})
+
+
 def sales(request):
     product_list = Product.objects.filter(is_enable=True).order_by('-quantity')[:5]
     content = {
@@ -56,6 +90,7 @@ def sales(request):
     return render(request, 'mainapp/sales.html', context=content)
 
 
+# @never_cache
 def product(request, pk):
     product = get_object_or_404(Product.objects.select_related(), pk=pk)
     same_products = Product.objects.filter(category=product.category).filter(is_enable=True).exclude(pk=pk).select_related()[:4]
@@ -137,12 +172,13 @@ def get_products_orederd_by_price():
 
 
 def get_products_in_category_orederd_by_price(pk):
-   if settings.LOW_CACHE:
-       key = f'products_in_category_orederd_by_price_{pk}'
-       products = cache.get(key)
-       if products is None:
-           products = Product.objects.filter(category__pk=pk, is_active=True, category__is_active=True).order_by('price')
-           cache.set(key, products)
-       return products
-   else:
-       return Product.objects.filter(category__pk=pk, is_active=True, category__is_active=True).order_by('price')
+    if settings.LOW_CACHE:
+        key = f'products_in_category_orederd_by_price_{pk}'
+        products = cache.get(key)
+        if products is None:
+            products = Product.objects.filter(category__pk=pk, is_active=True, category__is_active=True).order_by(
+                'price')
+            cache.set(key, products)
+        return products
+    else:
+        return Product.objects.filter(category__pk=pk, is_active=True, category__is_active=True).order_by('price')
