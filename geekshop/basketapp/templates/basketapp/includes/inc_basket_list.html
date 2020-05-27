@@ -1,6 +1,6 @@
 {% load my_tags %}
 
-{% for item in basket_items %}
+{% for item in basket%}
     <hr>
     <div class="basket_record">
         <img class="cart-img" src="{{ item.product.image|media_folder_products }}" alt="{{ item.product.short_desc }}">
@@ -18,11 +18,11 @@
     <div class="clearfix"></div>
 {% endfor %}
 <hr>
-{% if basket_items %}
+{% if basket %}
     <div class="basket_summary logo-div mb200">
         <h4 class="main-top-h">
-            В корзине {{ basket_items.0.total_quantity }}
-            товаров общей стоимость {{ basket_items.0.total_cost }} руб
+            В корзине {{ basket.0.total_quantity }}
+            товаров общей стоимость {{ basket.0.total_cost }} руб
         </h4>
         <a href="{% url 'ordersapp:order_create' %}" class="btn btn-outline-success"> Оформить заказ </a>
     </div>
