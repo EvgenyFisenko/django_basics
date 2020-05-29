@@ -1,6 +1,3 @@
-from basketapp.models import Basket
-
-
 def basket(request):
     basket = []
 

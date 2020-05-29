@@ -13,7 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path
+from django.urls import path, re_path
+from django.views.decorators.cache import cache_page
 
 import mainapp.views as mainapp
 
@@ -24,4 +25,8 @@ urlpatterns = [
     path('category/<int:pk>/', mainapp.products, name='category'),
     path('category/<int:pk>/page/<int:page>/', mainapp.products, name='page'),
     path('product/<int:pk>/', mainapp.product, name='product'),
+
+
+    re_path(r'^category/(?P<pk>\d+)/ajax/$', cache_page(3600)(mainapp.products_ajax)),
+    re_path(r'^category/(?P<pk>\d+)/page/(?P<page>\d+)/ajax/$', cache_page(3600)(mainapp.products_ajax)),
 ]
