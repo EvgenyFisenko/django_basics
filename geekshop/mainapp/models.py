@@ -34,6 +34,7 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.name} {self.brand.name} ({self.category.name})"
+        # return f"{self.name}"
 
     @staticmethod
     def get_items():

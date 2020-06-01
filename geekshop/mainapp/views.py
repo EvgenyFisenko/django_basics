@@ -147,6 +147,7 @@ def get_products():
         return Product.objects.filter(is_enable=True, category__is_active=True).select_related('category')
 
 
+# @never_cache
 def get_product(pk):
     if settings.LOW_CACHE:
         key = f'product_{pk}'
